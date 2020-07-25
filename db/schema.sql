@@ -5,6 +5,6 @@ USE pcpartsDB;
 CREATE TABLE pcparts (
     id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(200) NOT NULL,
-    pcpart BOOLEAN DEFAULT FALSE,
+    pcpart BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
