@@ -1,6 +1,13 @@
-<h1>Cats!</h1>
 
-<h2>Cats that are not sleepy!</h2>
+
+
+
+<div class="container center">
+<h1>Pc parts Wishlist</h1>
+</div>
+
+
+<h2>Current Build Wishlist</h2>
 
  <ul>
   {{#each pcparts}}
@@ -10,7 +17,7 @@
   {{/each}}
 </ul>
 
-<h2>Cats that are sleepy!</h2>
+<h2>Items Purchased</h2>
 
 <ul>
   {{#each pcparts}}
@@ -20,19 +27,19 @@
   {{/each}}
 </ul> 
 
-<h2>Add a Cat</h2>
+<h2>Add a new PC part</h2>
 <form class="create-form">
 
   <div class="form-group">
-    <label for="ca">Cat Name:</label>
+    <label for="pa"> Add New PC part:</label>
     <input type="text" id="pa" name="name">
   </div>
 
   <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
+    <label for="pcpart">Purchased or Wishlist item?</label><br>
     <input type="radio" name="pcpart" value="1" checked> Purchased!<br>
-    <input type="radio" name="pcpart" value="0"> Awake
+    <input type="radio" name="pcpart" value="0"> Wishing!
   </div>
 
-  <button type="submit">Add part</button>
+  <button type="submit">Add PC Part</button>
 </form> 

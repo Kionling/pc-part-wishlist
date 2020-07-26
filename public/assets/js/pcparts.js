@@ -1,13 +1,13 @@
 $(function() {
 $(".change-status").on("click", function(event) {
     var id = $(this).data("id");
-    var pcstatus = $(this).data("pcstatus");
+    var pcstatus = $(this).data("status");
 
     var pcstatusState = {
         pcpart: pcstatus
     };
 
-    $.ajax("/api/pcparts" + id, {
+    $.ajax("/api/pcparts/" + id, {
         type: "PUT", 
         data: pcstatusState
     }).then(
@@ -27,7 +27,7 @@ $(".create-form").on("submit", function(event) {
         pcpart: $("[name=pcpart]:checked").val().trim()
     };
 
-    $.ajax("/api/pcparts", {
+    $.ajax("/api/pcparts/", {
         type: "POST",
         data: newItem
     }).then(
@@ -36,12 +36,21 @@ $(".create-form").on("submit", function(event) {
 
             location.reload();
         }
-    )
-})
+    );
+});
 
+$(".delete-part").on("click", function(event) {
+    var id = $(this).data("id");
 
-
-
+    $.ajax("/api/pcparts/" + id, {
+        type: "DELETE"
+    }).then(
+        function() {
+            console.log("Deleted part!", id);
+            location.reload();
+        }
+    );
+});
 
 
 

@@ -17,29 +17,28 @@ router.get("/", function(req, res){
 });
 
 router.post("/api/pcparts", function(req, res) {
-    pcpart.create([
-        "name", "pcpart"
-    ], [
-        req.body.name, req.body.pcpart
-    ], function(result) {
-        res.json({id: result.insertId});
-    });
-});
+    pcpart.create(["name", "pcpart"], [req.body.name, req.body.pcpart], function(result) {
+        res.json({ id: result.insertId });
+    })
+})
 
 router.put("/api/pcparts/:id", function(req, res){
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
-    pcpart.update({
-        pcpart: req.body.pcpart
-    }, condition, function(result) {
-        if (result.changedRows === 0) {
-            return res.status(404).end();
-        } else {
+    pcpart.update(
+        {
+            pcpart: req.body.pcpart
+        },
+        condition,
+        function(result) {
+            if(result.changedRows === 0) {
+                return res.status(404),end();
+            }
             res.status(200).end();
         }
-    });
+    )
 });
 
 router.delete("/api/pcparts/:id", function(req, res) {
