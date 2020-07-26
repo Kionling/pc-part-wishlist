@@ -26,6 +26,18 @@ router.post("/api/pcparts", function(req, res) {
     });
 });
 
-router.put("/api/pcparts/:id")
+router.put("/api/pcparts/:id", function(req, res){
+    var condition = "id = " + req.params.id;
+
+    console.log("condition", condition);
+
+    pcpart.update({
+        pcpart: req.body.pcpart
+    }, condition, function(result) {
+        if (result.changedRows === 0) {
+            return.res.status(404).end();
+        }
+    })
+})
 
 module.exports = router;
