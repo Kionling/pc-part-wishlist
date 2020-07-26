@@ -16,7 +16,16 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/api/pcparts")
+router.post("/api/pcparts", function(req, res) {
+    pcpart.create([
+        "name", "pcpart"
+    ], [
+        req.body.name, req.body.pcpart
+    ], function(result) {
+        res.json({id: result.insertId});
+    });
+});
 
+router.put("/api/pcparts/:id")
 
 module.exports = router;
