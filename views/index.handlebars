@@ -2,10 +2,10 @@
 
 <h2>Cats that are not sleepy!</h2>
 
-<ul>
+ <ul>
   {{#each pcparts}}
     {{#unless pcpart}}
-      {{> pcparts/build-block pcpart=true}}
+      {{> build/xBuild pcstatus=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,10 +15,10 @@
 <ul>
   {{#each pcparts}}
     {{#if pcpart}}
-      {{> pcparts/build-block pcpart=false}}
+      {{> build/xBuild pcstatus=false}}
     {{/if}}
   {{/each}}
-</ul>
+</ul> 
 
 <h2>Add a Cat</h2>
 <form class="create-form">
