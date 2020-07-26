@@ -5,7 +5,7 @@
 <ul>
   {{#each pcparts}}
     {{#unless pcpart}}
-      {{> pcparts/pcpart-block pcpart=true}}
+      {{> pcparts/build-block pcpart=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -15,7 +15,7 @@
 <ul>
   {{#each pcparts}}
     {{#if pcpart}}
-      {{> pcparts/cat-block pcpart=false}}
+      {{> pcparts/build-block pcpart=false}}
     {{/if}}
   {{/each}}
 </ul>
@@ -30,9 +30,9 @@
 
   <div class="form-group">
     <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
+    <input type="radio" name="pcpart" value="1" checked> Sleepy!<br>
+    <input type="radio" name="pcpart" value="0"> Awake
   </div>
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add part</button>
 </form>
