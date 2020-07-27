@@ -1,14 +1,20 @@
 
+<nav>
+    <div class="nav-wrapper #ba68c8 purple lighten-2">
+      <a href="/" class="brand-logo center ">Pc part wishlist</a>
+      
+    </div>
+  </nav>
 
 
 
 <div class="container center">
-<h1>Pc parts Wishlist</h1>
+<h1 style="font-weight: 700;">Pc parts Wishlist</h1>
 </div>
 
-
-<h2>Current Build Wishlist</h2>
-
+<div class="row center">
+    <div class="col s6">
+<h3 style="font-weight: 700;">Current Build Wishlist</h3>
  <ul>
   {{#each pcparts}}
     {{#unless pcpart}}
@@ -16,8 +22,10 @@
     {{/unless}}
   {{/each}}
 </ul>
+</div>
 
-<h2>Items Purchased</h2>
+<div class="col s6">
+<h3 style="font-weight: 700;">Items Purchased</h3>
 
 <ul>
   {{#each pcparts}}
@@ -25,9 +33,11 @@
       {{> build/xBuild pcstatus=false}}
     {{/if}}
   {{/each}}
-</ul> 
+</ul>
+</div>
+</div> 
 
-<h2>Add a new PC part</h2>
+<h3 style="font-weight: 700;">Add a new PC part</h3>
 <form class="create-form">
 
   <div class="form-group">
@@ -36,10 +46,19 @@
   </div>
 
   <div class="form-group">
-    <label for="pcpart">Purchased or Wishlist item?</label><br>
-    <input type="radio" name="pcpart" value="1" checked> Purchased!<br>
-    <input type="radio" name="pcpart" value="0"> Wishing!
+   <p>
+      <label>
+        <input name="pcpart" type="radio"  value="1"checked />
+        <span>Wishlist</span>
+      </label>
+    </p>
+    <p>
+      <label>
+        <input name="pcpart" type="radio" value="0" checked />
+        <span>Purchased</span>
+      </label>
+    </p>
   </div>
 
-  <button type="submit">Add PC Part</button>
+  <button class="btn waves-effect waves-light" type="submit">Add PC Part</button>
 </form> 

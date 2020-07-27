@@ -1,9 +1,12 @@
 <li>
+	<p style="font-weight: 700;">
 	{{name}}
+	</p>
 
-	<button class="change-status" data-id="{{id}}" data-status="{{pcstatus}}">
-		{{#if pcstatus}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	<button class="btn waves-effect waves-light change-status" data-id="{{id}}" data-status="{{pcstatus}}">
+		{{#if pcstatus}}Purchased{{else}}Add to wishlist{{/if}}
 	</button>
 
-	<button class="delete-part" data-id="{{this.id}}">DELETE!</button>
+	{{!-- <button class="delete-part" data-id="{{this.id}}">DELETE!</button> --}}
+	<button class="btn waves-effect waves-light delete-part" data-id="{{this.id}}">Delete</button>
 </li>
